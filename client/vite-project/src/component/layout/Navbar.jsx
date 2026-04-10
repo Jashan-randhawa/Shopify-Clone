@@ -120,7 +120,7 @@ const Navbar = () => {
   const showDropdown = focused && (query.trim() ? true : history.length > 0 || TRENDING.length > 0);
 
   // ── Shared search input ───────────────────────────────────────────────────
-  const SearchBox = ({ sx = {} }) => (
+  const renderSearchBox = (sx = {}) => (
     <Box ref={boxRef} sx={{ position: 'relative', flex: 1, ...sx }}>
       <Box sx={{
         display: 'flex', alignItems: 'center',
@@ -302,7 +302,7 @@ const Navbar = () => {
             </Box>
 
             {/* Desktop Search */}
-            <SearchBox sx={{ display: { xs: 'none', md: 'flex' } }} />
+            {renderSearchBox({ display: { xs: 'none', md: 'flex' } })}
 
             {/* Nav Links */}
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 0.5, flexShrink: 0 }}>
@@ -365,7 +365,7 @@ const Navbar = () => {
             display: { xs: mobileOpen ? 'flex' : 'none', md: 'none' },
             px: 2, pb: 1.5, borderTop: '1px solid #eee'
           }}>
-            <SearchBox sx={{ flex: 1 }} />
+            {renderSearchBox({ flex: 1 })}
           </Box>
         </Fade>
       </AppBar>
