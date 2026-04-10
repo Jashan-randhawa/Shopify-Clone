@@ -373,7 +373,7 @@ const Navbar = () => {
       {/* Overlay to close dropdown */}
       {focused && (
         <Box sx={{
-          position: 'fixed', inset: 0, zIndex: 1300,
+          position: 'fixed', inset: 0, zIndex: 1150,
           bgcolor: 'rgba(0,0,0,0.15)', backdropFilter: 'blur(1px)'
         }} onClick={() => { setFocused(false); setQuery(''); }} />
       )}
