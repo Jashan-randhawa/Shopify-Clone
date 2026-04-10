@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { CircularProgress, Box } from '@mui/material';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 
@@ -62,6 +63,7 @@ const App = () => (
       <BrowserRouter>
         <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
         <AppRoutes />
+        <Analytics />
       </BrowserRouter>
     </CartProvider>
   </AuthProvider>
