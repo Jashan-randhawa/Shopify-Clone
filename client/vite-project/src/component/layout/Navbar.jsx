@@ -157,7 +157,7 @@ const Navbar = () => {
       {/* ── Dropdown ── */}
       <Fade in={showDropdown}>
         <Paper elevation={8} sx={{
-          position: 'absolute', top: '100%', left: 0, right: 0, zIndex: 1400,
+          position: 'absolute', top: '100%', left: 0, right: 0,
           borderRadius: '0 0 12px 12px', border: '1.5px solid #1a237e',
           borderTop: 'none', maxHeight: 440, overflowY: 'auto',
         }}>
@@ -373,7 +373,7 @@ const Navbar = () => {
       {/* Overlay to close dropdown */}
       {focused && (
         <Box sx={{
-          position: 'fixed', inset: 0, zIndex: 1150,
+          position: 'fixed', inset: 0, zIndex: 999,
           bgcolor: 'rgba(0,0,0,0.15)', backdropFilter: 'blur(1px)'
         }} onClick={() => { setFocused(false); setQuery(''); }} />
       )}
